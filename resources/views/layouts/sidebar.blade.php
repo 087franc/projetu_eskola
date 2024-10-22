@@ -29,7 +29,7 @@
             <a href="/dashboard" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
-                Dashboard
+                Baranda
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>

@@ -24,7 +24,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DataTables</h1>
+            <h1>Lista Estudante</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -42,85 +42,114 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">DataTable with minimal features & hover style</h3>
+              <h3 class="card-title">Dadus Estudante Ativu</h3>
             </div>
+           @if(@session('sukses'))           
+            <div class="alert alert-info m-2">
+              {{ session('sukses') }}
+            </div>
+            @endif
             <!-- /.card-header -->
             <div class="card-body">
-              <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="example1_length"><label>Show <select name="example1_length" aria-controls="example1" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="example1_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+              <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_length" id="example1_length">
+                      <label>Show <select name="example1_length" aria-controls="example1" class="custom-select custom-select-sm form-control form-control-sm">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select> entries</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div id="example1_filter" class="dataTables_filter">
+                      <div class="aumenta">
+                        <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal">
+                          Aumenta
+                        </button>
+                      </div>
+                      <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                 <thead>
-                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 150.917px;">Rendering engine</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 196.75px;">Browser</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 173.625px;">Platform(s)</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 127.417px;">Engine version</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 87.9583px;">CSS grade</th></tr>
+                <tr role="row">
+                  <th>No</th>
+                  <th>Naran</th>
+                  <th>Sexo</th>
+                  <th>Hela Fatin</th>
+                  <th>Data Moris</th>
+                  <th>Foto</th>
+                  <th>Aksaun</th>
+                </tr>
                 </thead>
                 <tbody>
+                @foreach ($dadus_estudante as $dadus )           
+               
                 <tr role="row" class="odd">
-                  <td class="sorting_1">Gecko</td>
-                  <td>Firefox 1.0</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.7</td>
-                  <td>A</td>
-                </tr><tr role="row" class="even">
-                  <td class="sorting_1">Gecko</td>
-                  <td>Firefox 1.5</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr><tr role="row" class="odd">
-                  <td class="sorting_1">Gecko</td>
-                  <td>Firefox 2.0</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr><tr role="row" class="even">
-                  <td class="sorting_1">Gecko</td>
-                  <td>Firefox 3.0</td>
-                  <td>Win 2k+ / OSX.3+</td>
-                  <td>1.9</td>
-                  <td>A</td>
-                </tr><tr role="row" class="odd">
-                  <td class="sorting_1">Gecko</td>
-                  <td>Camino 1.0</td>
-                  <td>OSX.2+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr><tr role="row" class="even">
-                  <td class="sorting_1">Gecko</td>
-                  <td>Camino 1.5</td>
-                  <td>OSX.3+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr><tr role="row" class="odd">
-                  <td class="sorting_1">Gecko</td>
-                  <td>Netscape 7.2</td>
-                  <td>Win 95+ / Mac OS 8.6-9.2</td>
-                  <td>1.7</td>
-                  <td>A</td>
-                </tr><tr role="row" class="even">
-                  <td class="sorting_1">Gecko</td>
-                  <td>Netscape Browser 8</td>
-                  <td>Win 98SE+</td>
-                  <td>1.7</td>
-                  <td>A</td>
-                </tr><tr role="row" class="odd">
-                  <td class="sorting_1">Gecko</td>
-                  <td>Netscape Navigator 9</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr><tr role="row" class="even">
-                  <td class="sorting_1">Gecko</td>
-                  <td>Mozilla 1.0</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1</td>
-                  <td>A</td>
-                </tr></tbody>
-                <tfoot>
-                <tr><th rowspan="1" colspan="1">Rendering engine</th><th rowspan="1" colspan="1">Browser</th><th rowspan="1" colspan="1">Platform(s)</th><th rowspan="1" colspan="1">Engine version</th><th rowspan="1" colspan="1">CSS grade</th></tr>
-                </tfoot>
+                  <td>{{ $dadus->id_estudante }}</td>
+                  <td>{{ $dadus->naran_kompletu }}</td>
+                  <td>{{ $dadus->sexo }}</td>
+                  <td>{{ $dadus->hela_fatin }}</td>
+                  <td>{{ $dadus->data_moris }}</td>
+                  <td>{{ $dadus->foto }}</td>
+                  <td><a href="/estudante/hadia/"  class=" btn-sm btn-outline-info" >Hadia</a> | <a href="" class=" btn-sm btn-outline-danger">Hamos</a></td>
+                </tr>
+               @endforeach
+              </tbody>                
               </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
             </div>
           <!-- /.card -->
         </div>
         <!-- /.col -->
       </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">formulario Aumenta Dadus Estudante</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="/estudante/aumenta" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <label class="form-label" for="">Naran Kompletu:</label>
+                <input class="form-control" type="text" name="naran_kompletu" placeholder="naran kompletu" autocomplete="off" required>
+                <label for="" class="form-label">Sexo: </label>
+                <select name="sexo" id="" class="form-control">
+                  <option value="M">Mane</option>
+                  <option value="F">Feto</option>
+                  <option value="S">Seluk</option>
+                </select>
+                <label class="form-label" for="">Hela Fatin :</label>
+                <input class="form-control" type="text" name="hela_fatin" placeholder="hela fatin" required>
+                <label class="form-label" for="">Data Moris :</label>
+                <input class="form-control" type="date" name="data_moris" placeholder="data moris" required>
+                <label class="form-label" for="">No Telefone</label>
+                <input class="form-control" type="number" name="no_telefone" placeholder="no telefone" required>
+                <label class="form-label" for="">Foto</label>
+                <input class="form-control" type="file" name="foto" placeholder="imagen">              
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Kansela</button>
+                  <button type="submit" class="btn btn-success">Aumenta</button>
+                </div>
+              </form>
+              </div>
+           
+          </div>
+        </div>
+      </div>
+
       <!-- /.row -->
     </section>
     <!-- /.content -->
